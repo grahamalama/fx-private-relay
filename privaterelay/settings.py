@@ -607,7 +607,11 @@ AUTHENTICATION_BACKENDS = (
 SOCIALACCOUNT_PROVIDERS = {
     "fxa": {
         # Note: to request "profile" scope, must be a trusted Mozilla client
-        "SCOPE": ["profile", "https://identity.mozilla.com/account/subscriptions"],
+        "SCOPE": [
+            "profile",
+            "https://identity.mozilla.com/account/subscriptions",
+            "https://identity.mozilla.com/apps/relay",
+        ],
         "AUTH_PARAMS": {"access_type": "offline"},
         "OAUTH_ENDPOINT": config(
             "FXA_OAUTH_ENDPOINT", "https://oauth.accounts.firefox.com/v1"
